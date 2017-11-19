@@ -6,8 +6,17 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bck_planet</background>
+    <background>background\bck_test</background>
+  </backgrounds>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\obj_sphere</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_menu_test</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
