@@ -25,12 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>rot_x = 0;
+            <string>rot_x = 90;
 rot_y = 0;
 m_x_p = -1;
 m_y_p = -1;
 rot_x_p = -1;
 rot_y_p = -1;
+
+cloud_spin = 0;
 </string>
           </argument>
         </arguments>
@@ -58,11 +60,11 @@ rot_y_p = -1;
     if(m_x_p == -1)
     {
         m_x_p = mouse_x;
-        m_y_p = mouse_y;
-        rot_x_p = rot_x;
+        //m_y_p = mouse_y;
+        //rot_x_p = rot_x;
         rot_y_p = rot_y;
     }
-    rot_x = rot_x_p + (m_y_p - mouse_y);
+    //rot_x = rot_x_p + (m_y_p - mouse_y);
     rot_y = rot_y_p - (m_x_p - mouse_x);
 }
 else
@@ -72,6 +74,8 @@ else
     rot_y_p = -1;
     rot_x_p = -1;
 }
+
+cloud_spin += 0.05;
 </string>
           </argument>
         </arguments>
@@ -118,8 +122,9 @@ draw_text(0, 32, "rot_y" + string(rot_y));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// draw ellipsoid
-tex = background_get_texture(bck_test);
+            <string>/// Render Planet
+tex = background_get_texture(bck_planet);
+rad = 250;
 
 d3d_start();
 d3d_set_lighting(true);
@@ -129,8 +134,43 @@ d3d_light_define_ambient(c_white)
 d3d_transform_set_identity();
 d3d_transform_set_rotation_x(rot_x);
 d3d_transform_add_rotation_y(rot_y);
-d3d_transform_add_translation(320,180,100) 
-d3d_draw_ellipsoid(-150, -150, -150, 150, 150, 150, tex, 1, 1, 24);
+d3d_transform_add_translation(320,200,450) 
+d3d_draw_ellipsoid(-rad, -rad, -rad, rad, rad, rad, tex, 1, 1, 24);
+d3d_transform_set_identity();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Render Cloud Layer
+tex = background_get_texture(bck_clouds);
+rad = 260;
+
+d3d_start();
+d3d_set_lighting(true);
+d3d_light_define_point(1, -200, -123, -50, 5000, c_white);
+d3d_light_enable(1, true);
+d3d_light_define_ambient(c_white)
+d3d_transform_set_identity();
+d3d_transform_set_rotation_x(rot_x);
+d3d_transform_add_rotation_y(rot_y + cloud_spin);
+d3d_transform_add_translation(320,200,450) 
+d3d_draw_ellipsoid(-rad, -rad, -rad, rad, rad, rad, tex, 1, 1, 24);
 d3d_transform_set_identity();
 </string>
           </argument>
