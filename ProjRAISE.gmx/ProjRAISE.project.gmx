@@ -10,6 +10,7 @@
     <background>background\bck_planet</background>
     <background>background\bck_clouds</background>
     <background>background\bck_test</background>
+    <background>background\bck_stars</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
