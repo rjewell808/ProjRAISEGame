@@ -656,5 +656,10 @@
     <option_xbone_texture_page>1024</option_xbone_texture_page>
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
-  <ConfigConstants/>
+  <ConfigConstants>
+    <constants number="2">
+      <constant name="VIEW_WIDTH">360</constant>
+      <constant name="VIEW_HEIGHT">640</constant>
+    </constants>
+  </ConfigConstants>
 </Config>
