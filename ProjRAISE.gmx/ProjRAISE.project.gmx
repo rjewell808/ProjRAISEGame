@@ -5,9 +5,39 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_solid</sprite>
+    <sprite>sprites\spr_solid_ripple</sprite>
+    <sprite>sprites\spr_ripple</sprite>
+    <sprite>sprites\spr_ripple_2</sprite>
+    <sprite>sprites\spr_ripple_corner</sprite>
+    <sprite>sprites\spr_snow</sprite>
+    <sprite>sprites\spr_polar_bear</sprite>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\bck_planet</background>
+    <background>background\bck_clouds</background>
+    <background>background\bck_test</background>
+    <background>background\bck_stars</background>
+    <background>background\bck_tiles</background>
+  </backgrounds>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\obj_sphere</object>
+    <object>objects\obj_player</object>
+    <object>objects\obj_global</object>
+    <object>objects\obj_solid</object>
+    <object>objects\obj_solid_ripple</object>
+    <object>objects\obj_solid_ripple_corner</object>
+    <object>objects\obj_snow</object>
+    <object>objects\obj_polar_bear</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_init</room>
+    <room>rooms\rm_artic</room>
+    <room>rooms\rm_menu_test</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
