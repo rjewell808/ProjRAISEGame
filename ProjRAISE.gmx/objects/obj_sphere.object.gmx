@@ -76,6 +76,7 @@ else
 }
 
 cloud_spin += 0.05;
+rot_y += 0.03;
 </string>
           </argument>
         </arguments>
@@ -100,6 +101,9 @@ cloud_spin += 0.05;
             <kind>1</kind>
             <string>draw_text(0, 0, "rot_x" + string(rot_x));
 draw_text(0, 32, "rot_y" + string(rot_y));
+
+background_alpha[0] = 0.1;
+background_alpha[1] = 0.3;
 </string>
           </argument>
         </arguments>
@@ -135,8 +139,44 @@ d3d_transform_set_identity();
 d3d_transform_set_rotation_x(-rot_x);
 d3d_transform_add_rotation_y(rot_y);
 d3d_transform_add_translation(320,180,450) 
+d3d_draw_ellipsoid(-rad, -rad, -rad, rad, rad, rad, tex, 1, 1, 20);
+d3d_transform_set_identity();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Render Cloud Shadow Layer
+tex = background_get_texture(bck_clouds);
+rad = 171;
+
+d3d_start();
+d3d_set_lighting(true);
+d3d_light_define_point(1, -200, -123, -50, 5000, c_black);
+d3d_light_enable(1, true);
+d3d_light_define_ambient(c_ltgray)
+d3d_transform_set_identity();
+d3d_transform_set_rotation_x(rot_x);
+d3d_transform_add_rotation_y(rot_y + cloud_spin);
+d3d_transform_add_translation(320,180,450) 
 d3d_draw_ellipsoid(-rad, -rad, -rad, rad, rad, rad, tex, 1, 1, 24);
 d3d_transform_set_identity();
+d3d_end();
 </string>
           </argument>
         </arguments>
