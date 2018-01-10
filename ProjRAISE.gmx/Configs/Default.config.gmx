@@ -658,8 +658,8 @@
   </Options>
   <ConfigConstants>
     <constants number="2">
-      <constant name="VIEW_WIDTH">360</constant>
-      <constant name="VIEW_HEIGHT">640</constant>
+      <constant name="VIEW_WIDTH">278</constant>
+      <constant name="VIEW_HEIGHT">208</constant>
     </constants>
   </ConfigConstants>
 </Config>

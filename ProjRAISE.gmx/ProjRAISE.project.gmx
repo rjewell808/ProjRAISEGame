@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_player_walk</sprite>
     <sprite>sprites\spr_solid</sprite>
     <sprite>sprites\spr_solid_ripple</sprite>
     <sprite>sprites\spr_ripple</sprite>
@@ -14,6 +15,7 @@
     <sprite>sprites\spr_ripple_corner</sprite>
     <sprite>sprites\spr_snow</sprite>
     <sprite>sprites\spr_polar_bear</sprite>
+    <sprite>sprites\spr_footprint</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_planet</background>
@@ -23,6 +25,9 @@
     <background>background\bck_tiles</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_player_move.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_sphere</object>
     <object>objects\obj_player</object>
@@ -32,10 +37,12 @@
     <object>objects\obj_solid_ripple_corner</object>
     <object>objects\obj_snow</object>
     <object>objects\obj_polar_bear</object>
+    <object>objects\obj_footprint</object>
+    <object>objects\obj_view</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
-    <room>rooms\rm_artic</room>
+    <room>rooms\rm_arctic</room>
     <room>rooms\rm_menu_test</room>
   </rooms>
   <help>
