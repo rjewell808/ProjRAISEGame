@@ -139,7 +139,7 @@ d3d_transform_set_identity();
 d3d_transform_set_rotation_x(-rot_x);
 d3d_transform_add_rotation_y(rot_y);
 d3d_transform_add_translation(320,180,450) 
-d3d_draw_ellipsoid(-rad, -rad, -rad, rad, rad, rad, tex, 1, 1, 20);
+d3d_draw_ellipsoid(-rad, -rad, -rad, rad, rad, rad, tex, 1, 1, 30);
 d3d_transform_set_identity();
 </string>
           </argument>
@@ -162,6 +162,7 @@ d3d_transform_set_identity();
           <argument>
             <kind>1</kind>
             <string>///Render Cloud Shadow Layer
+/*
 tex = background_get_texture(bck_clouds);
 rad = 171;
 
@@ -177,6 +178,7 @@ d3d_transform_add_translation(320,180,450)
 d3d_draw_ellipsoid(-rad, -rad, -rad, rad, rad, rad, tex, 1, 1, 24);
 d3d_transform_set_identity();
 d3d_end();
+*?
 </string>
           </argument>
         </arguments>
